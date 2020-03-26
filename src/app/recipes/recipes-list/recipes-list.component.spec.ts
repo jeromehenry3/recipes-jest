@@ -4,6 +4,8 @@ import { RecipesListComponent } from './recipes-list.component';
 import { By } from '@angular/platform-browser';
 import { ShoppingListComponent } from 'src/app/shopping-list/shopping-list.component';
 import { RecipeDetailComponent } from '../recipe-detail/recipe-detail.component';
+import { RecipeItemComponent } from './recipe-item/recipe-item.component';
+import { MockComponent } from 'ng-mocks';
 
 describe('RecipesListComponent', () => {
   let component: RecipesListComponent;
@@ -11,7 +13,10 @@ describe('RecipesListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RecipesListComponent ],
+      declarations: [
+        RecipesListComponent,
+        MockComponent(RecipeItemComponent),
+      ],
       providers: []
     })
     .compileComponents();
@@ -30,5 +35,10 @@ describe('RecipesListComponent', () => {
   it('should match snapshot', () => {
     const recipesList = fixture.debugElement.nativeElement;
     expect(recipesList).toMatchSnapshot();
+  });
+
+  it('should render `RecipeItemComponent`', () => {
+    const recipeItem = fixture.debugElement.query(By.directive(RecipeItemComponent));
+    expect(recipeItem.componentInstance).toBeTruthy();
   });
 });

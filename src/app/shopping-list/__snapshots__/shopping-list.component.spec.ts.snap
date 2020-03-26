@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShoppingListComponent should match snapshot 1`] = `
+<div
+  id="root1"
+>
+  <div
+    class="row"
+  >
+    <div
+      class="col-xs-10"
+    >
+      <app-shopping-edit />
+      <hr />
+      <p>
+        ici vient la liste
+      </p>
+    </div>
+  </div>
+</div>
+`;

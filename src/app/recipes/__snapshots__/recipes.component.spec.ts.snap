@@ -10,23 +10,12 @@ exports[`RecipesComponent should match snapshot 1`] = `
     <div
       class="col-md-5"
     >
-      <app-recipes-list>
-        <div
-          class="row"
-        >
-           recipes list
-
-        </div>
-      </app-recipes-list>
+      <app-recipes-list />
     </div>
     <div
       class="col-md-7"
     >
-      <app-recipe-detail>
-        <p>
-          recipe-detail works!
-        </p>
-      </app-recipe-detail>
+      <app-recipe-detail />
     </div>
   </div>
 </div>
