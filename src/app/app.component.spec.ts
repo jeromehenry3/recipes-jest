@@ -1,4 +1,5 @@
 import { TestBed, async } from '@angular/core/testing';
+import { MockComponent } from 'ng-mocks';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { RecipesComponent } from './recipes/recipes.component';
@@ -10,15 +11,10 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        HeaderComponent,
-        RecipesComponent,
-        ShoppingListComponent,
+        MockComponent(HeaderComponent),
+        MockComponent(RecipesComponent),
+        MockComponent(ShoppingListComponent),
       ],
-      providers: [
-        HeaderComponent,
-        RecipesComponent,
-        ShoppingListComponent,
-      ]
     }).compileComponents();
   }));
 
@@ -58,21 +54,21 @@ describe('AppComponent', () => {
       const app = fixture.debugElement;
       fixture.detectChanges();
       const header = app.query(By.directive(HeaderComponent));
-      expect(header.componentInstance).toBeInstanceOf(HeaderComponent);
+      expect(header).toBeTruthy();
     });
     it('should render the `Recipes` component', () => {
       const fixture = TestBed.createComponent(AppComponent);
       const app = fixture.debugElement;
       fixture.detectChanges();
       const recipes = app.query(By.directive(RecipesComponent));
-      expect(recipes.componentInstance).toBeInstanceOf(RecipesComponent);
+      expect(recipes.componentInstance).toBeTruthy();
     });
     it('should render the `ShoppingLIst` component', () => {
       const fixture = TestBed.createComponent(AppComponent);
       const app = fixture.debugElement;
       fixture.detectChanges();
       const recipes = app.query(By.directive(ShoppingListComponent));
-      expect(recipes.componentInstance).toBeInstanceOf(ShoppingListComponent);
+      expect(recipes.componentInstance).toBeTruthy();
     });
   });
 
