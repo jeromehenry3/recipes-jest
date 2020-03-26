@@ -12,12 +12,4 @@ export class RecipesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  fakeFuncTocheckCoverageIsOk() {
-    let a = 1;
-    a = 2;
-    const c = 3;
-    console.log('c', c);
-    return a + c;
-  }
-
 }
